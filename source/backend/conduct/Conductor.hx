@@ -1,59 +1,91 @@
 package backend.conduct;
 
 import flixel.FlxBasic;
+import Reflect;
 
+//things that Conductor should use this interface!
 interface IConductor {
     var conductor:Conductor;
+    public function stepHit(curStep:Int):Void;
+    public function beatHit(curBeat:Int):Void;
+    public function measureHit(curMeasure:Int):Void;
 }
 
 typedef TimeSignature =
 {
     var beats:Int;
-    @:optional var noteValue:Int;
+    var noteValue:Int;
 }
 
-class Conductor extends FlxBasic
-{
-    public var bpm:Float;
+class Conductor
+{    
     public var time:Float = 0;
-    public var stepCall:Int->Void = null;
-    public var beatCall:Int->Void = null;
-    public var measureCall:Int->Void = null;
     public var timeSignature:TimeSignature = {beats: 4, noteValue: 4};
 
-    public function new(bpm:Int = 120, stepCall:Int->Void = null, beatCall:Int->Void = null, measureCall:Int->Void = null)
+    public var parent:Dynamic;
+
+    public var curMeasure:Int = 0;
+    public var curBeat:Int = 0;
+    public var curStep:Int = 0;
+
+    public var bpm(default, set):Float;
+
+    public function set_bpm(v:Float)
     {
+        parent.conductor = new Conductor(parent, v);
+        return v;
+    }
+
+    public function new(parent:Dynamic, bpm:Float = 102)
+    {
+        this.parent = parent;
         this.bpm = bpm;
-        this.stepCall = stepCall;
-        this.beatCall = beatCall;
-        this.measureCall = measureCall;
-        super();
     }
 
-    public function create()
+    public function update(elapsed:Float)
     {
-        
+        if (FlxG.sound.music == null) return;
+
+        time = FlxG.sound.music.time;
+        //trace(time);
+
+        var stepLengthMs:Float = (60 / bpm) * 1000 / 4;
+        var newStep:Int = Math.floor(time / stepLengthMs);
+
+        while (curStep < newStep)
+        {
+            stepHitInternal();
+        }
     }
 
-    override public function update(elapsed:Float)
+    function stepHitInternal()
     {
-        super.update(elapsed);
+        curStep++;
+        stepHit();
 
-        if (FlxG.sound.music != null) time = FlxG.sound.music.time;
+        if (curStep % 4 == 0)
+            beatHitInternal();
+
+        var stepsPerMeasure = timeSignature.beats*4;
+        if (curStep % stepsPerMeasure == 0)
+            measureHitInternal();
     }
 
-    public function beatHit(curBeat:Int) 
+    function beatHitInternal()
     {
-        beatCall(curBeat);
+        curBeat++;
+        parent.beatHit(curBeat);
     }
 
-    public function measureHit(curMeasure:Int) 
+    function measureHitInternal()
     {
-        measureCall(curMeasure);
+        curMeasure++;
+        parent.measureHit(curMeasure);
     }
 
-    public function stepHit(curStep:Int)
+    public function stepHit()
     {
-        stepCall(curStep);
+        curStep ++;
+        parent.stepHit(curStep);
     }
 }
