@@ -10,9 +10,8 @@ Welcome to the Github repository of G Engine, a Friday Night Funkin' engine rewr
 # Features
 HScriptable/Lua States
 
-Softcoded Events, Notetypes, stages, and more.
-
-insert more
+- Softcoded Events, Notetypes, stages, and more.
+- insert more
 
 
 
