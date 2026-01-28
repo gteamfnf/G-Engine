@@ -6,7 +6,8 @@ the most awesome five nights at funkings engine wow
 Welcome to the Github repository of G Engine, an FNF' engine rewritten completely from scratch.
 
 # Features
-insert features list here
+HScriptable/Lua States
+insert more
 
 
 
