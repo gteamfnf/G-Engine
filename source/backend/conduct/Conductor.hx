@@ -2,10 +2,14 @@ package backend.conduct;
 
 import flixel.FlxBasic;
 
+interface IConductor {
+    var conductor:Conductor;
+}
+
 typedef TimeSignature =
 {
-    var num:Int;
-    @:optional var dem:Int;
+    var beats:Int;
+    @:optional var noteValue:Int;
 }
 
 class Conductor extends FlxBasic
@@ -15,6 +19,7 @@ class Conductor extends FlxBasic
     public var stepCall:Int->Void = null;
     public var beatCall:Int->Void = null;
     public var measureCall:Int->Void = null;
+    public var timeSignature:TimeSignature = {beats: 4, noteValue: 4};
 
     public function new(bpm:Int = 120, stepCall:Int->Void = null, beatCall:Int->Void = null, measureCall:Int->Void = null)
     {

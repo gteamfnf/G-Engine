@@ -1,9 +1,10 @@
 package backend.conduct;
 
+import backend.conduct.Conductor.IConductor;
 import flixel.FlxState;
 import backend.conduct.*;
 
-class MusicBeatState extends FlxState
+class MusicBeatState extends FlxState implements IConductor
 {
-    static public var conductor:Conductor = new Conductor();
+    public var conductor:Conductor = new Conductor();
 }
