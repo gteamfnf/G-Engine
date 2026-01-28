@@ -1,0 +1,3 @@
+--class-path haxelib-installer
+--neko setup/compile-helper.n
+--main Main
