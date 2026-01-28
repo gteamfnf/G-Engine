@@ -1,4 +1,4 @@
-package game;
+package;
 
 #if !macro
 import flixel.*;
