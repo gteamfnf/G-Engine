@@ -1,5 +1,5 @@
 # <img width="1569" height="515" alt="image" src="https://github.com/user-attachments/assets/176a90b4-9193-4d00-a9c4-4e64f9ebd539" /> 
-(logo made with makewordart)
+<small>(logo made with makewordart)</small>
 
 the most awesome five nights at funkings engine wow
 
