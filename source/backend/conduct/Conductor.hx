@@ -85,7 +85,6 @@ class Conductor
 
     public function stepHit()
     {
-        curStep ++;
         parent.stepHit(curStep);
     }
 }
