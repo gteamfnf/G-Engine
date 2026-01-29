@@ -10,12 +10,10 @@ Welcome to the Github repository of G Engine, a Friday Night Funkin' engine rewr
 ## Features
 - HScriptable/Lua States
 - Softcoded Events, Notetypes, stages, and more.
-- insert more
-
-
+- optimization shit hopefully
 
 ## Credits:
-- Brainy - Lead Coder/Owner and stuff
+- [Brainy7890](https://github.com/Brainy0789) - Lead Coder/Owner and stuff
 - ChepsGames - Owner/Coder/and like something else idk
 - The Funkin' Crew - they made friday night funkin man they are cool 
 
