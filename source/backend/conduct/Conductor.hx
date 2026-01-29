@@ -1,8 +1,5 @@
 package backend.conduct;
 
-import flixel.FlxBasic;
-import Reflect;
-
 //things that Conductor should use this interface!
 interface IConductor {
     var conductor:Conductor;
@@ -28,13 +25,7 @@ class Conductor
     public var curBeat:Int = 0;
     public var curStep:Int = 0;
 
-    public var bpm(default, set):Float;
-
-    public function set_bpm(v:Float)
-    {
-        parent.conductor = new Conductor(parent, v);
-        return v;
-    }
+    public var bpm:Float;
 
     public function new(parent:Dynamic, bpm:Float = 102)
     {
