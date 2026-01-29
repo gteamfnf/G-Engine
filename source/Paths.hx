@@ -6,7 +6,7 @@ class Paths
 {
     inline public static function getPath(path:String)
     {
-        return 'assets/$path'; //lazy but extendable
+        return 'assets/shared/$path'; //lazy but extendable
     }
 
     inline public static function getImage(key:String)
