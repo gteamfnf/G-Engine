@@ -25,3 +25,5 @@ Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://n
 ## Other info:
 
 Documentation on how to mod the engine will be in the repo's [wiki](https://github.com/gteamfnf/G-Engine/wiki) as it gets more developed.
+
+Join our [Discord server](https://discord.gg/y5SF2HCUS9).
