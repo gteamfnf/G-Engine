@@ -15,6 +15,6 @@ Welcome to the Github repository of G Engine, a Friday Night Funkin' engine rewr
 ## Credits:
 - [Brainy7890](https://github.com/Brainy0789) - Lead Coder/Owner and stuff
 - ChepsGames - Owner/Coder/and like something else idk
-- The Funkin' Crew - they made friday night funkin man they are cool 
+- [The Funkin' Crew](https://github.com/FunkinCrew) - they made friday night funkin man they are cool 
 
 - some other person - theres no other person i LIED!!hHAHhAHah
