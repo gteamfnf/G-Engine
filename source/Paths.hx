@@ -9,9 +9,9 @@ class Paths
         return 'assets/shared/$path'; //lazy but extendable
     }
 
-    inline public static function getImage(key:String)
+    inline public static function getImage(key:String, fileExt = 'png')
     {
-        return getPath('images/${key}.png');
+        return getPath('images/${key}.$fileExt');
     }
 
     inline public static function getSound(key:String, fileExt = 'ogg')

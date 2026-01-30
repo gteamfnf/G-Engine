@@ -7,6 +7,10 @@ class TitleState extends MusicBeatState
 {
     var text:FlxText;
 
+    var logo:FlxSprite;
+
+    
+
     override public function create()
     {
         super.create();
@@ -20,12 +24,23 @@ class TitleState extends MusicBeatState
         text.text = RandomUtil.getRandomFromArray(texts);
         text.screenCenter();
 
-        add(text);
+        logo = new FlxSprite(-150, -100);
+		logo.frames = FlxAtlasFrames.fromSparrow(
+            Paths.getImage('logoBumpin'),
+            Paths.getImage('logoBumpin', 'xml')
+        );
+
+		logo.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+		logo.animation.play('bump');
+		logo.updateHitbox();
+
+        add(logo);
+
+        //add(text);
     }
 
     override public function beatHit(curBeat:Int)
     {
-        trace('Beat Hit!');
-        FlxG.sound.play(Paths.getSound('scrollMenu'));
+        logo.animation.play('bump');
     }
 }
