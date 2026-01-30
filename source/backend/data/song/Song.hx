@@ -1,4 +1,4 @@
-package backend.data;
+package backend.data.song;
 
 //todo
 typedef SongFile =
@@ -7,6 +7,7 @@ typedef SongFile =
     var bpm:Float;
     var speed:Float;
     var sections:Array<Section>;
+    var players:Array<String>;
     @:optional var noteCount:Int;
 }
 
