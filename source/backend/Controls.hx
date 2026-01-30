@@ -28,5 +28,11 @@ class Controls
         return FlxG.keys.justPressed.RIGHT || FlxG.keys.justPressed.D;
     }
 
+    public var ACCEPT(get, never):Bool;
+    public function get_ACCEPT():Bool
+    {
+        return FlxG.keys.justPressed.ENTER || FlxG.keys.justPressed.SPACE;
+    }
+
     public function new() {}
 }

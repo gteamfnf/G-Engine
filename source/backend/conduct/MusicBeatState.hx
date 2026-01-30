@@ -12,11 +12,11 @@ class MusicBeatState extends FlxState implements IConductor
     public var controls:Controls;
 
     override public function create()
-    {
+    {        
+        super.create();
+
         conductor = new Conductor(this);
         controls = new Controls();
-        
-        super.create();
     }
 
     override public function update(elapsed:Float) 

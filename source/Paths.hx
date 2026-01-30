@@ -32,4 +32,12 @@ class Paths
 
         return Json.parse(rawJSON);
     }
+
+    inline public static function getFrames(key:String):FlxAtlasFrames
+    {
+        return FlxAtlasFrames.fromSparrow(
+            Paths.getImage(key),
+            Paths.getImage(key, 'xml')
+        );
+    }
 }
