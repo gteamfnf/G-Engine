@@ -1,0 +1,9 @@
+{
+    "image": "BOYFRIEND",
+    "anims": [
+        {
+            "animName": "idle",
+            "anim": "BF idle dance"
+        }
+    ]
+}

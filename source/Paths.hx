@@ -26,11 +26,17 @@ class Paths
 
     inline public static function getJsonData(key:String, pathOverride:String = null):Dynamic //recommended you use casting!
     {
-        if (pathOverride != null) pathOverride = 'data';
-        var path = getPath('$pathOverride/$key.png');
+        if (pathOverride == null) pathOverride = 'data';
+        var path = getPath('$pathOverride/$key.json');
         var rawJSON = File.getContent(path);
 
-        return Json.parse(rawJSON);
+        try {
+            return Json.parse(rawJSON);
+        }
+        catch(e:Dynamic)
+        {
+            return null;
+        }
     }
 
     inline public static function getFrames(key:String):FlxAtlasFrames
