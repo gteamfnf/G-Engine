@@ -12,6 +12,7 @@ Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://n
 - HScript support using HScript-Iris
 - HScriptable/Lua States
 - Softcoded Events, Notetypes, stages, and more.
+- Runtime shaders
 - optimization shit hopefully
 
 ## Credits:
