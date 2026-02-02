@@ -1,3 +1,3 @@
 package game.play.objects;
 
-class Note extends BrainySprite {}
+class Note extends FunkinSprite {}
