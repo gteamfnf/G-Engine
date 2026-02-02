@@ -5,6 +5,7 @@ import backend.conduct.*;
 class BaseStage extends FlxBasic implements IConductor
 {
     public var stage:String = 'default';
+		public var conductor:Conductor;
 
     override public function new(stage:String)
     {
