@@ -12,7 +12,6 @@ class BaseStage extends FlxBasic implements IConductor
 
         super();
         conductor = new Conductor(this);
-        controls = new Controls();
     }
 
     override public function update(elapsed:Float) 
