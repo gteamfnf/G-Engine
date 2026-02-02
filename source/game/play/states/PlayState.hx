@@ -7,6 +7,8 @@ class PlayState extends MusicBeatState
 {
 	public var characters:Map<String, Character> = new Map();
 
+	public static var instance:PlayState = null;
+
 	public function makeCharacter(id:String, char:String, isPlayer:Bool = false, x:Float = 0, y:Float = 0):Character
 	{
 		var ch = new Character(x, y, char, isPlayer);
@@ -20,6 +22,8 @@ class PlayState extends MusicBeatState
 		add(characters.get('bf'));
 
 		super.create();
+
+		instance = this;
 	}
 
 	override public function update(elapsed:Float)
