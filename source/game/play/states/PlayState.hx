@@ -5,12 +5,19 @@ import game.objects.Character;
 
 class PlayState extends MusicBeatState
 {
-	var bf:Character;
+	public var characters:Map<String, Character> = new Map();
+
+	public static function makeCharacter(id:String, char:String, isPlayer:Bool = false, x:Float = 0, y:Float = 0):Character
+	{
+		var ch = new Character(x, y, char, isPlayer);
+		characters.set(id, ch);
+		return ch;
+	}
+	
 	override public function create()
 	{
-		bf = new Character(0, 0, 'bf', true);
-		bf.screenCenter();
-		add(bf);
+		makeCharacter('bf', 'bf', true).screenCenter();
+		add(characters.get('bf'));
 
 		super.create();
 	}
@@ -22,6 +29,7 @@ class PlayState extends MusicBeatState
 
 	override public function beatHit(curBeat:Int)
 	{
-		bf.animation.play('idle', true);
+		for (char in characters)
+			char.animation.play('idle', true);
 	}
 }
