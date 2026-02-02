@@ -7,7 +7,7 @@ class PlayState extends MusicBeatState
 {
 	public var characters:Map<String, Character> = new Map();
 
-	public static function makeCharacter(id:String, char:String, isPlayer:Bool = false, x:Float = 0, y:Float = 0):Character
+	public function makeCharacter(id:String, char:String, isPlayer:Bool = false, x:Float = 0, y:Float = 0):Character
 	{
 		var ch = new Character(x, y, char, isPlayer);
 		characters.set(id, ch);
