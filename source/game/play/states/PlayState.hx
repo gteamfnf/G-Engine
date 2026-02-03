@@ -1,7 +1,10 @@
 package game.play.states;
 
+import backend.data.song.Song;
 import flixel.FlxState;
 import game.objects.Character;
+
+import game.play.stages.*;
 
 class PlayState extends MusicBeatState
 {
@@ -9,19 +12,41 @@ class PlayState extends MusicBeatState
 
 	public static var instance:PlayState = null;
 
+	public var SONG:Song;
+
 	public function makeCharacter(id:String, char:String, isPlayer:Bool = false, x:Float = 0, y:Float = 0):Character
 	{
 		var ch = new Character(x, y, char, isPlayer);
 		characters.set(id, ch);
 		return ch;
 	}
+
+	inline public function addCharacter(id:String)
+	{
+		if (characters.exists(id)) add(characters.get(id));
+	}
+
+	inline public function insertCharacter(id:String, order:Int)
+	{
+		if (characters.exists(id)) insert(characters.get(id), order);
+	}
 	
 	override public function create()
 	{
+		SONG = cast Paths.getJsonData('normal', 'data/test');
 		makeCharacter('bf', 'bf', true).screenCenter();
-		add(characters.get('bf'));
+		addCharacter('bf');
 
 		super.create();
+
+		switch(SONG.stage)
+		{
+			case 'stage':
+				new StageWeek1();
+
+			default:
+				new BaseStage(SONG.stage);
+		}
 
 		instance = this;
 	}

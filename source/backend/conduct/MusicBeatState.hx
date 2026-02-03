@@ -9,7 +9,7 @@ import backend.Controls;
 class MusicBeatState extends FlxState implements IConductor
 {
     public var conductor:Conductor;
-    public var controls:Controls;
+    public var controls(default, never):Controls;
 
     override public function create()
     {        

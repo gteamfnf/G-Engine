@@ -1,0 +1,26 @@
+{
+    "name": "Test",
+    "bpm": 150,
+    "speed": 1,
+    "players": [
+        {
+            "char": "bf",
+            "id": "bf",
+            "isPlayer": true,
+            "strumPosX": 0.75
+        },
+        {
+            "char": "dad",
+            "id": "dad",
+            "isPlayer": false,
+            "strumPosX": 0.25
+        },
+        {
+            "char": "gf",
+            "id": "gf",
+            "isPlayer": false,
+            "hideStrum": true
+        }
+    ],
+    "sections": []
+}
