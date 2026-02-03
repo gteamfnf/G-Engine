@@ -20,11 +20,9 @@ Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://n
 - [ChepsGames](https://github.com/JohnPeakerson) - Owner/Coder/and like something else idk
 - [The Funkin' Crew](https://github.com/FunkinCrew) - they made friday night funkin man they are cool
 - [ALE Psych](https://github.com/ALE-Psych-Crew/ALE-Psych) - Engine inspiration e
-
 - some other person - theres no other person i LIED!!hHAHhAHah
 
 ## Other info:
-
-Documentation on how to mod the engine will be in the repo's [wiki](https://github.com/gteamfnf/G-Engine/wiki) as it gets more developed.
+Documentation on how to mod the engine will be in the repo's website as it gets more developed.
 
 Join our [Discord server](https://discord.gg/y5SF2HCUS9).
