@@ -4,6 +4,9 @@ import backend.Controls;
 import backend.data.stage.StageData;
 import game.objects.Character;
 
+/**
+ * File used for all softcoded stages, all hardcoded stages should extend this.
+ */
 class BaseStage extends FlxBasic implements IConductor
 {
     public var stage:String = 'default';
@@ -32,9 +35,15 @@ class BaseStage extends FlxBasic implements IConductor
         PlayState.instance.add(obj);
     }
 
-    inline public function insert(obj:Dynamic, order:Int)
+    inline public function insert(order:Int, obj:FlxBasic)
     {
-        PlayState.instance.insert(obj, order);
+        PlayState.instance.insert(order, obj);
+    }
+
+    private inline function nullCheckedValue(v:Dynamic, def:Dynamic):Dynamic
+    {
+        if (v == null) return def;
+        else return v;
     }
 
     public function create()
@@ -42,15 +51,21 @@ class BaseStage extends FlxBasic implements IConductor
         for (char in data.characters)
         {
             var charName:String = 'bf';
-            for (ch in PlayState.instance.SONG.players)
-            {
-                if (ch.id == char.id)
+            if (PlayState.instance.SONG != null)
+                for (ch in PlayState.instance.SONG.players)
                 {
-                    charName = ch.char;
-                    break;
+                    if (ch.id == char.id)
+                    {
+                        charName = ch.char;
+                        break;
+                    }
                 }
-            }
-            var character = new Character(0, 0, charName);
+            
+            var pos = nullCheckedValue(char.pos, {x: 0, y: 0});
+            var charX = nullCheckedValue(char.pos.x, 0);
+            var charY = nullCheckedValue(char.pos.y, 0);
+            var character = PlayState.instance.makeCharacter(char.id, charName, charX, charY);
+            PlayState.instance.add(character);
         }
     }
 

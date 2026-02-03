@@ -7,6 +7,7 @@ import backend.conduct.*;
 import backend.conduct.Conductor.IConductor;
 
 import game.objects.FunkinSprite;
+import game.play.states.PlayState;
 
 using StringTools;
 #end

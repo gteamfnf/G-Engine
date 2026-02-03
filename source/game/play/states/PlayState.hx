@@ -28,11 +28,12 @@ class PlayState extends MusicBeatState
 
 	inline public function insertCharacter(id:String, order:Int)
 	{
-		if (characters.exists(id)) insert(characters.get(id), order);
+		if (characters.exists(id)) insert(order, characters.get(id));
 	}
 	
 	override public function create()
 	{
+		instance = this;
 		SONG = cast Paths.getJsonData('normal', 'data/test');
 		makeCharacter('bf', 'bf', true).screenCenter();
 		addCharacter('bf');
@@ -47,8 +48,6 @@ class PlayState extends MusicBeatState
 			default:
 				new BaseStage(SONG.stage);
 		}
-
-		instance = this;
 	}
 
 	override public function update(elapsed:Float)
