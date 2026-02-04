@@ -1,8 +1,14 @@
-package states.stages;
+package game.play.stages;
 
 import game.play.stages.objects.BGSprite;
 class StageWeek1 extends BaseStage
 {
+	override public function new()
+	{
+		super('stage');
+
+		trace(data);
+	}
 	override function create()
 	{
 		var bg:BGSprite = new BGSprite('week1/stageback', -600, -200, 0.9, 0.9);

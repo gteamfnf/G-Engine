@@ -67,7 +67,11 @@ class BaseStage extends FlxBasic implements IConductor
             var character = PlayState.instance.makeCharacter(char.id, charName, charX, charY);
             PlayState.instance.add(character);
         }
+
+        createPost();
     }
+
+    public function createPost() {}
 
     override public function update(elapsed:Float) 
     {

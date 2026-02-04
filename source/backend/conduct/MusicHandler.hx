@@ -6,15 +6,17 @@ import sys.io.File;
 
 class MusicHandler
 {
-    public static var music(get, never):FlxSound;
+    public static var sound(get, never):FlxSound;
+    public static var sounds:Map<String, FlxSound> = new Map();
 
-    public static function get_music():FlxSound
+    public static function get_sound():FlxSound
     {
         return FlxG.sound.music;
     }
 
-    inline public static function playMusic(path:String):Float
+    inline public static function playMusic(path:String, flxSound:FlxSound = null):Float
     {
+        if (flxSound == null) flxSound = sound;
         FlxG.sound.playMusic(Paths.getMusic(path));
 
         try {
@@ -24,5 +26,12 @@ class MusicHandler
         {
             return 102;
         }
+    }
+
+    inline public function playSong(songName:String, voices:Bool)
+    {
+        playMusic(songName + '/Inst');
+        sounds.set('voices', new FlxSound());
+        playMusic(songName + '/Voices', sounds.get('voices'));
     }
 }
