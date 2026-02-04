@@ -1,0 +1,9 @@
+{
+    "image": "DADDY_DEAREST",
+    "anims": [
+        {
+            "animName": "idle",
+            "anim": "Dad idle dance"
+        }
+    ]
+}

@@ -61,9 +61,9 @@ class BaseStage extends FlxBasic implements IConductor
                     }
                 }
             
-            var pos = nullCheckedValue(char.pos, {x: 0, y: 0});
-            var charX = nullCheckedValue(char.pos.x, 0);
-            var charY = nullCheckedValue(char.pos.y, 0);
+            var pos = nullCheckedValue(char?.pos, {x: 0, y: 0});
+            var charX = nullCheckedValue(char.pos?.x, 0);
+            var charY = nullCheckedValue(char.pos?.y, 0);
             var character = PlayState.instance.makeCharacter(char.id, charName, charX, charY);
             PlayState.instance.add(character);
         }

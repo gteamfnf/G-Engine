@@ -35,8 +35,6 @@ class PlayState extends MusicBeatState
 	{
 		instance = this;
 		SONG = cast Paths.getJsonData('normal', 'data/test');
-		makeCharacter('bf', 'bf', true).screenCenter();
-		addCharacter('bf');
 
 		super.create();
 
