@@ -14,6 +14,7 @@ Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://n
 - Softcoded Events, Notetypes, stages, and more.
 - Runtime shaders
 - optimization shit hopefully
+- Unlimited strum support
 
 ## Credits:
 - [Brainy7890](https://github.com/Brainy0789) - Lead Coder/Owner and stuff
