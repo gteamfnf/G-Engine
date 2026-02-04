@@ -9,5 +9,5 @@ class PrefData
 
 class ClientPrefs
 {
-    public static var data:Data = new PrefData();
+    public static var data:PrefData = new PrefData();
 }
