@@ -18,11 +18,11 @@ class StageWeek1 extends BaseStage
 		stageLight.updateHitbox();
 		add(stageLight);
 
-		var stageLight:BGSprite = new BGSprite('week1/stage_light', 1225, -100, 0.9, 0.9);
-		stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
-		stageLight.updateHitbox();
-		stageLight.flipX = true;
-		add(stageLight);
+		var stageLight2:BGSprite = new BGSprite('week1/stage_light', 1225, -100, 0.9, 0.9);
+		stageLight2.setGraphicSize(Std.int(stageLight2.width * 1.1));
+		stageLight2.updateHitbox();
+		stageLight2.flipX = true;
+		add(stageLight2);
 
 		var stageCurtains:BGSprite = new BGSprite('week1/stagecurtains', -500, -300, 1.3, 1.3);
 		stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
