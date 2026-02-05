@@ -1,5 +1,7 @@
 package backend;
 
+import flixel.util.FlxSave;
+
 /**
  * Simple class to track highscores in songs.
  */

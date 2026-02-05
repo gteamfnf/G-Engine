@@ -5,34 +5,40 @@ class StageWeek1 extends BaseStage
 {
 	override public function new()
 	{
-		super('stage');
-
-		trace(data);
+		super('stage', 'week1');
 	}
+
 	override function create()
 	{
-		var bg:BGSprite = new BGSprite('week1/stageback', -600, -200, 0.9, 0.9);
+		var bg:FlxSprite = new FlxSprite(-600, -200, Paths.getImage('week1/stageback'));
+		bg.scrollFactor.set(0.9, 0.9);
 		add(bg);
 
-		var stageFront:BGSprite = new BGSprite('week1/stagefront', -650, 600, 0.9, 0.9);
+		var stageFront:FlxSprite = new FlxSprite(-650, -600, Paths.getImage('week1/stagefront'));
 		stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 		stageFront.updateHitbox();
 		add(stageFront);
 
-		var stageLight:BGSprite = new BGSprite('week1/stage_light', -125, -100, 0.9, 0.9);
+		var stageLight:FlxSprite = new FlxSprite(-125, -100, Paths.getImage('week1/stage_light'));
 		stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
 		stageLight.updateHitbox();
+		stageLight.scrollFactor.set(0.9, 0.9);
 		add(stageLight);
 
-		var stageLight2:BGSprite = new BGSprite('week1/stage_light', 1225, -100, 0.9, 0.9);
-		stageLight2.setGraphicSize(Std.int(stageLight2.width * 1.1));
-		stageLight2.updateHitbox();
-		stageLight2.flipX = true;
-		add(stageLight2);
+		var stageLight:FlxSprite = new FlxSprite(1225, -100, Paths.getImage('week1/stage_light'));
+		stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
+		stageLight.updateHitbox();
+		stageLight.flipX = true;
+		stageLight.scrollFactor.set(0.9, 0.9);
+		add(stageLight);
 
-		var stageCurtains:BGSprite = new BGSprite('week1/stagecurtains', -500, -300, 1.3, 1.3);
-		stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
+		var stageCurtains:FlxSprite = new FlxSprite(-500, -300, Paths.getImage('week1/stagecurtains'));
+		stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 1.1));
 		stageCurtains.updateHitbox();
 		add(stageCurtains);
+
+		trace(PlayState.instance.members);
+
+		super.create();
 	}
 }

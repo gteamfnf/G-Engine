@@ -53,7 +53,7 @@ class Paths
     {
         if (graphicCache.exists(key)) return graphicCache.get(key);
         var bmp = Assets.getBitmapData(key);
-        var grpc = FlxGraphic.fromBitmapData(bpm);
+        var grpc = FlxGraphic.fromBitmapData(bmp);
         graphicCache.set(key, grpc);
 
         return grpc;

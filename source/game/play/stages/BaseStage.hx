@@ -5,7 +5,7 @@ import backend.data.stage.StageData;
 import game.objects.Character;
 
 /**
- * File used for all softcoded stages, all hardcoded stages should extend this.
+ * Class used for all softcoded stages, all hardcoded stages should extend this.
  */
 class BaseStage extends FlxBasic implements IConductor
 {
@@ -13,24 +13,26 @@ class BaseStage extends FlxBasic implements IConductor
 	public var conductor:Conductor;
     public var data:StageData;
 
+    public static var weekPath:String = null;
+
     var controls(get, never):Controls;
 
     function get_controls():Controls
         return PlayState.instance.controls;
 
-    override public function new(stage:String)
+    override public function new(stage:String, path:String = null)
     {
         this.stage = stage;
-
-        super();
+        weekPath = path;
 
         data = Paths.getJsonData(this.stage, 'stages');
         conductor = new Conductor(this);
 
         create();
+        super();
     }
 
-    inline public function add(obj:Dynamic)
+    inline public function add(obj:FlxBasic)
     {
         PlayState.instance.add(obj);
     }
@@ -67,6 +69,8 @@ class BaseStage extends FlxBasic implements IConductor
             var character = PlayState.instance.makeCharacter(char.id, charName, charX, charY);
             add(character);
         }
+
+        FlxG.camera.zoom = nullCheckedValue(data?.zoom, 0.9);
 
         createPost();
     }

@@ -15,4 +15,5 @@ typedef CharacterStageData = {
 typedef StageData =
 {
     var characters:Array<CharacterStageData>;
+    @:optional var zoom:Int;
 }
