@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.gx": "haxe",
+    "*.hscript": "haxe",
+    "*.frag": "glsl"
+  }
+}

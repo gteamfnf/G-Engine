@@ -1,6 +1,4 @@
 package game.play.stages;
-
-import game.play.stages.objects.BGSprite;
 class StageWeek1 extends BaseStage
 {
 	override public function new()

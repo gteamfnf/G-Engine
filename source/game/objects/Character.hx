@@ -46,7 +46,7 @@ class Character extends FunkinSprite
 
     public function create()
     {
-        trace(Paths.getImage('characters/${data.image}'));
+        //trace(Paths.getImage('characters/${data.image}'));
         frames = Paths.getFrames('characters/${data.image}');
 
         for (anim in data.anims)

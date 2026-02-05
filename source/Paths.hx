@@ -26,6 +26,11 @@ class Paths
     {
         return getPath('music/${key}.$fileExt');
     }
+    
+    inline public static function getScripts(key:String, fileExt = 'gx')
+    {
+        return getPath('scripts/${key}.$fileExt');
+    }
 
     inline public static function getJsonData(key:String, pathOverride:String = null):Dynamic //recommended you use casting!
     {

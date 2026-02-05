@@ -3,3 +3,4 @@
 dump/
 export/
 *.DS_Store
+!.vscode/

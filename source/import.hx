@@ -1,6 +1,7 @@
 package;
 
 #if !macro
+import GEngine;
 import flixel.*;
 import flixel.graphics.frames.FlxAtlasFrames;
 import backend.conduct.*;

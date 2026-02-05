@@ -1,26 +1,22 @@
-package game.menus.states;
-
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import backend.utils.RandomUtil;
 import flixel.text.FlxText;
 import flixel.effects.FlxFlicker;
 
-class TitleState extends MusicBeatState
-{
-    var text:FlxText;
+var text:FlxText;
 
-    var logo:FlxSprite;
-    var pressEnter:FlxSprite; 
+var logo:FlxSprite;
+var pressEnter:FlxSprite; 
     
-    override public function new()
-    {
-        super('TitleState');
-    }
+override public function new()
+{
+    super('TitleState');
+}
 
-    override public function create()
-    {
-        super.create();
+override public function create()
+{
+    super.create();
 
         conductor.bpm = MusicHandler.playMusic('freakyMenu');
 

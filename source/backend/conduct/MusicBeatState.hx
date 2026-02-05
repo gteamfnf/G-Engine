@@ -1,15 +1,30 @@
 package backend.conduct;
 
 import backend.conduct.Conductor.IConductor;
+
+import backend.scripting.*;
+#if gscript
+import backend.scripting.hscript.*;
+#end
+
 import flixel.FlxState;
 import backend.conduct.*;
 
 import backend.Controls;
 
-class MusicBeatState extends FlxState implements IConductor
+class MusicBeatState extends FlxState implements IConductor implements IScriptable
 {
     public var conductor:Conductor;
     public var controls:Controls;
+
+    #if gscript
+    public var gscript:FunkinGScript;
+    #end
+
+    override public function new(state:String = 'MusicBeatState')
+    {
+        super();
+    }
 
     override public function create()
     {        
@@ -17,6 +32,17 @@ class MusicBeatState extends FlxState implements IConductor
 
         conductor = new Conductor(this);
         controls = new Controls();
+
+        #if gscript
+        gscript.call('create');
+        #end
+    }
+
+    public function createPost() 
+    {
+        #if gscript
+        gscript.call('createPost');
+        #end
     }
 
     override public function update(elapsed:Float) 
@@ -24,6 +50,10 @@ class MusicBeatState extends FlxState implements IConductor
         super.update(elapsed);
 
         conductor.update(elapsed);
+
+        #if gscript
+        gscript.call('update', elapsed);
+        #end
     }
 
     public function stepHit(curStep:Int) {}
