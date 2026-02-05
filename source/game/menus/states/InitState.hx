@@ -4,7 +4,7 @@ class InitState extends FlxState
 {
     override public function create()
     {
-	    FlxG.save.bind("GEngineTeam", "funkin");
+	    Preferences.initData();
         FlxG.switchState(new game.menus.states.TitleState());
     }
 }

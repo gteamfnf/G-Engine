@@ -1,12 +1,6 @@
 package backend;
 
-class PrefData
-{
-    public function new() {}
-
-    public var downscroll:Bool = false;
-}
-
+import backend.Highscores;
 class Preferences
 {
     public static var data = {
@@ -17,15 +11,20 @@ class Preferences
     public static function initData()
     {
         FlxG.save.bind("GEngineTeam", "funkin");
-        if (FlxG.data.initialized == true)
+        if (FlxG.save.data.initialized == true)
         {
             data = FlxG.save.data;
+        }
+        else
+        {
+            data.initialized = true;
+            saveData();
         }
     }
 
     public static function saveData()
     {
-        FlxG.save.data = data;
-        FlxG.flush();
+        FlxG.save.mergeData(data, true);
+        Highscores.init();
     }
 }
