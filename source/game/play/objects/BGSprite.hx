@@ -1,4 +1,5 @@
-package game.play.stages.objects;
+package game.play.objects;
+
 class BGSprite extends FunkinSprite
 {
     public var image:String;
