@@ -15,7 +15,7 @@ Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://n
 - Runtime shaders
 - optimization shit hopefully
 - Unlimited strum support
-- Multikey Support 
+- Multikey Support!!
 
 ## Credits:
 - [Brainy7890](https://github.com/Brainy0789) - Lead Coder/Owner and stuff
