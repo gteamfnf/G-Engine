@@ -1,5 +1,8 @@
 package;
 
+import openfl.utils.Assets;
+import flixel.graphics.FlxGraphic;
+import openfl.display.Bitmap;
 import sys.io.File;
 import haxe.Json;
 class Paths
@@ -38,6 +41,23 @@ class Paths
             return null;
         }
     }
+
+    public static var graphicCache:Map<String, FlxGraphic> = new Map();
+
+    /**
+     * Adds graphic to image cache, and returns it.
+     * @param key 
+     * @return FlxGraphic
+     */
+    public static function cacheImage(key:String):FlxGraphic
+    {
+        if (graphicCache.exists(key)) return graphicCache.get(key);
+        var bmp = Assets.getBitmapData(key);
+        var grpc = FlxGraphic.fromBitmapData(bpm);
+        graphicCache.set(key, grpc);
+
+        return grpc;
+    } 
 
     inline public static function getFrames(key:String):FlxAtlasFrames
     {
