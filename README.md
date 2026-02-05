@@ -9,7 +9,7 @@ the most awesome five nights at funkings engine wow
 Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://ninja-muffin24.itch.io/funkin) engine rewritten completely from scratch in [HaxeFlixel](https://haxeflixel.com).
 
 ## (Planned) Features
-- HScript support using HScript-Iris
+- HScript support using GScript (HScript-Iris fork)
 - HScriptable/Lua States
 - Softcoded Events, Notetypes, stages, and more.
 - Runtime shaders
