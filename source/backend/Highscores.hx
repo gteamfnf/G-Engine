@@ -14,7 +14,7 @@ class Highscores
     public static function init()
     {
         save = new FlxSave();
-        save.bind('GEngineTeam', 'scores');
+        save.bind('scores', 'GEngineTeam');
 
         scores = save.data;
     }

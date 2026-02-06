@@ -10,7 +10,7 @@ class Preferences
 
     public static function initData()
     {
-        FlxG.save.bind("GEngineTeam", "funkin");
+        FlxG.save.bind("funkin", "GEngineTeam");
         if (FlxG.save.data.initialized == true)
         {
             data = FlxG.save.data;
