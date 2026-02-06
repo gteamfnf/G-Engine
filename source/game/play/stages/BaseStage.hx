@@ -62,10 +62,10 @@ class BaseStage extends FlxBasic implements IConductor
                         break;
                     }
                 }
-            
-            var pos = nullCheckedValue(char?.pos, {x: 0, y: 0});
-            var charX = nullCheckedValue(char.pos?.x, 0);
-            var charY = nullCheckedValue(char.pos?.y, 0);
+
+            if (char.pos == null) char.pos = {x: 0, y: 0};
+            var charX = (char.pos.x != null) ? char.pos.x : 0;
+            var charY = (char.pos.y != null) ? char.pos.y : 0;
             var character = PlayState.instance.makeCharacter(char.id, charName, charX, charY);
             add(character);
         }
