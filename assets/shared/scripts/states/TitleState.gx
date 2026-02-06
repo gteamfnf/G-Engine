@@ -4,22 +4,12 @@ import backend.utils.RandomUtil;
 import flixel.text.FlxText;
 import flixel.effects.FlxFlicker;
 
-var text:FlxText;
-
 var logo:FlxSprite;
 var pressEnter:FlxSprite;
 
 public function create()
 {
-    super.create();
-
     conductor.bpm = MusicHandler.playMusic('freakyMenu');
-
-    text = new FlxText();
-    var path = Paths.getPath('data/introText.txt');
-    //var texts = RandomUtil.coolTextFile(path);
-    //text.text = RandomUtil.getRandomFromArray(texts);
-    //text.screenCenter();
 
     logo = new FlxSprite(-150, -100);
 	logo.frames = Paths.getFrames('logoBumpin');
@@ -39,7 +29,6 @@ public function create()
 
     add(logo);
     add(pressEnter);
-    add(text);
 }
 
 var curTime:Float = 0;
@@ -58,12 +47,8 @@ public function update(elapsed:Float)
     }
 
     var textColor = Math.sin(curTime);
-
     pressEnter.color = FlxColor.fromRGBFloat(textColor, 1, 1);
-
     curTime += elapsed;
-
-    text.text = '${conductor.time}';
 }
 
 public function beatHit(curBeta:Int)

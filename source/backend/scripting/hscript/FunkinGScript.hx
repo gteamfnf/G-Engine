@@ -15,7 +15,7 @@ import flixel.group.FlxSpriteGroup;
 
 class FunkinGScript extends GScript
 {
-    public var parent:FlxSpriteGroup;
+    public var parent:Dynamic;
     
     public static var extensions:Array<String> = [
         "gx",
@@ -26,16 +26,23 @@ class FunkinGScript extends GScript
 
     private function _add(flx:FlxSprite) 
     {
-        if (parent != null) parent.add(flx);
+        if (parent != null) 
+        {
+            if (Reflect.field(parent, 'add'))
+            {
+                parent.add(flx);
+            }
+        }
     }
 
-    override public function new(scriptPath:String, parent:FlxSpriteGroup = null, ?config:AutoGScriptConfig)
+    override public function new(scriptPath:String, parent:Dynamic = null, ?config:AutoGScriptConfig)
     {
         this.parent = parent;
         var path = '';
         for (extension in extensions)
         {
             path = Paths.getScript(scriptPath, extension);
+            Sys.println(path);
 
             if (FileSystem.exists(path))
             {
@@ -45,6 +52,8 @@ class FunkinGScript extends GScript
 
         var script = 'import flixel.*;\n' + File.getContent(path);
 
+        trace(script);
+
         super(script, config);
 
         set('GEngine', GEngine);
@@ -52,7 +61,7 @@ class FunkinGScript extends GScript
         set('GColor', GColor);
 
         set("add", _add);
-        set("state", parent);
+        set("game", parent);
         set("CustomState", MusicBeatState);
 
         var controls = Reflect.field(FlxG.state, "controls");

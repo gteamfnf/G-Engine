@@ -21,9 +21,31 @@ class MusicBeatState extends FlxState implements IConductor implements IScriptab
     public var gscript:FunkinGScript;
     #end
 
-    override public function new(state:String = 'MusicBeatState')
+    inline public function call(func:String, ?args:Array<Dynamic>)
+    {
+        if (gscript == null)
+            return null;
+        else
+            return gscript.call(func, args);
+    }
+
+    override public function new(state:String = null)
     {
         super();
+
+        if (state == null) return;
+
+        #if gscript
+        try 
+        {
+            gscript = new FunkinGScript('states/' + state, this);
+        }
+        catch(e:Dynamic)
+        {
+            Sys.println('Error executing script!');
+            gscript = null;
+        }
+        #end
     }
 
     override public function create()
@@ -34,14 +56,14 @@ class MusicBeatState extends FlxState implements IConductor implements IScriptab
         controls = new Controls();
 
         #if gscript
-        gscript.call('create');
+        call('create');
         #end
     }
 
     public function createPost() 
     {
         #if gscript
-        gscript.call('createPost');
+        call('createPost');
         #end
     }
 
@@ -52,13 +74,24 @@ class MusicBeatState extends FlxState implements IConductor implements IScriptab
         conductor.update(elapsed);
 
         #if gscript
-        gscript.call('update', [elapsed]);
+        call('update', [elapsed]);
         #end
     }
 
-    public function stepHit(curStep:Int) {}
+    public function stepHit(curStep:Int) 
+    {
+        #if gscript
+        call('stepHit', [curStep]);
+        #end
+    }
 
-    public function beatHit(curBeat:Int) {}
+    public function beatHit(curBeat:Int) 
+    {
+        call('beatHit', [curBeat]);
+    }
 
-    public function measureHit(curMeasure:Int) {}
+    public function measureHit(curMeasure:Int) 
+    {
+        call('measureHit', [curMeasure]);
+    }
 }
