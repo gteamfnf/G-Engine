@@ -36,7 +36,7 @@
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
-	<haxelib name="flixel-brainy" />
+	<haxelib name="g-flixel" />
 	<haxelib name="gscript"/>
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
