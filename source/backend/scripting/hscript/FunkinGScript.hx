@@ -12,6 +12,8 @@ import backend.scripting.*;
 
 class FunkinGScript extends GScript
 {
+    public var parent:FlxSpriteGroup;
+    
     public static var extensions:Array<String> = [
         "gx",
         "hx",
@@ -19,8 +21,14 @@ class FunkinGScript extends GScript
         "hscript",
     ];
 
-    override public function new(scriptPath:String, ?config:AutoGScriptConfig)
+    private function _add(flx:FlxBasic) 
     {
+        if (parent != null) parent.add(flx);
+    }
+
+    override public function new(scriptPath:String, parent:FlxSpriteGroup = null, ?config:AutoGScriptConfig)
+    {
+        this.parent = parent;
         var path = '';
         for (extension in extensions)
         {
@@ -39,6 +47,9 @@ class FunkinGScript extends GScript
         set('GEngine', GEngine);
         set('FlxColor', GColor);
         set('GColor', GColor);
+
+        set("add", _add);
+        set("state", parent);
 
         var controls = Reflect.field(FlxG.state, "controls");
 
