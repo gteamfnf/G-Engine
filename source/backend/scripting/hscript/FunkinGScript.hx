@@ -53,6 +53,7 @@ class FunkinGScript extends GScript
 
         set("add", _add);
         set("state", parent);
+        set("CustomState", MusicBeatState);
 
         var controls = Reflect.field(FlxG.state, "controls");
 
