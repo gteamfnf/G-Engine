@@ -1,10 +1,13 @@
 package backend.scripting.hscript;
 
 import brainy.gscript.*;
+import brainy.gscript.GScriptConfig.AutoGScriptConfig;
 import sys.io.File;
 import sys.FileSystem;
 
 import backend.scripting.*;
+
+import flixel.group.FlxSpriteGroup;
 
 /**
  * Class that injects functions to HScript/GScript
@@ -21,7 +24,7 @@ class FunkinGScript extends GScript
         "hscript",
     ];
 
-    private function _add(flx:FlxBasic) 
+    private function _add(flx:FlxSprite) 
     {
         if (parent != null) parent.add(flx);
     }
@@ -63,7 +66,7 @@ class FunkinGScript extends GScript
     override public function call(func:String, args:Array<Dynamic> = null)
     {
         if (exists(func))
-            return super(func, args);
+            return super.call(func, args);
         else 
             return null;
     }

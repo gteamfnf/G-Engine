@@ -52,7 +52,7 @@ class MusicBeatState extends FlxState implements IConductor implements IScriptab
         conductor.update(elapsed);
 
         #if gscript
-        gscript.call('update', elapsed);
+        gscript.call('update', [elapsed]);
         #end
     }
 

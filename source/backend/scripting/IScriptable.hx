@@ -4,7 +4,7 @@ import backend.scripting.*;
 import backend.scripting.hscript.*;
 import backend.scripting.lua.*;
 
-interface IScriptable =
+interface IScriptable
 {
     #if gscript
     public var gscript:FunkinGScript;

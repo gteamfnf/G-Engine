@@ -3,6 +3,7 @@ package;
 #if !macro
 import GEngine;
 import flixel.*;
+import flixel.util.FlxColor;
 import flixel.graphics.frames.FlxAtlasFrames;
 import backend.conduct.*;
 import backend.conduct.Conductor.IConductor;

@@ -27,7 +27,7 @@ class Paths
         return getPath('music/${key}.$fileExt');
     }
     
-    inline public static function getScripts(key:String, fileExt = 'gx')
+    inline public static function getScript(key:String, fileExt = 'gx')
     {
         return getPath('scripts/${key}.$fileExt');
     }
