@@ -4,6 +4,8 @@ import backend.utils.RandomUtil;
 import flixel.text.FlxText;
 import flixel.effects.FlxFlicker;
 
+import game.play.states.PlayState;
+
 var logo:FlxSprite;
 var pressEnter:FlxSprite;
 
@@ -42,7 +44,7 @@ public function update(elapsed:Float)
         FlxFlicker.flicker(pressEnter, 1, 0.06);
             
         new FlxTimer().start(1, function(timer:FlxTimer) {
-            FlxG.switchState(new game.play.states.PlayState());
+            FlxG.switchState(new PlayState());
         });
     }
 
