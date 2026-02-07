@@ -78,9 +78,9 @@ class TitleState extends MusicBeatState
         //text.text = '${conductor.time}';
     }
 
-    override public function beatHit(curBeta:Int)
+    override public function beatHit(curBeat:Int)
     {
         logo.animation.play('bump');
-        FlxG.sound.play(Paths.getSound('scrollMenu'));
+        //FlxG.sound.play(Paths.getSound('scrollMenu'));
     }
 }

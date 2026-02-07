@@ -40,9 +40,9 @@ class Conductor
         time = FlxG.sound.music.time;
         //trace(time);
 
-        var stepLengthMs:Float = (60000 / bpm)/4;
-        var timingOffset = stepLengthMs * 0.25;
-        var newStep:Int = Math.floor((time + timingOffset) / stepLengthMs);
+        var stepLength:Float = ((60 / bpm) / 4)*1000;
+        var timingOffset = stepLength * 0.25;
+        var newStep:Int = Math.floor((time + timingOffset) / stepLength);
 
         while (curStep < newStep)
         {
