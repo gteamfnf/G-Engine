@@ -6,7 +6,7 @@ typedef AnimationData =
 {
     var animName:String;
     var anim:String;
-    @:optional var offsets:Array<Int>;
+    @:optional var offsets:Array<Dynamic>;
     @:optional var fps:Int;
     @:optional var loops:Bool;
 }
@@ -15,9 +15,12 @@ typedef CharacterData =
 {
     var image:String;
     var anims:Array<AnimationData>;
+    var singDuration:Float;
     @:optional var icon:String;
     @:optional var pos:ObjectPos;
+    @:optional var camPos:ObjectPos;
     @:optional var flipX:Bool;
+    @:optional var antialiasing:Bool;
 }
 
 class Character extends FunkinSprite
@@ -25,6 +28,8 @@ class Character extends FunkinSprite
     public var char:String = 'bf';
     public var isPlayer:Bool = false;
     private var data:CharacterData;
+
+    public var animOffsets:Map<String, Array<Dynamic>> = new Map<String, Array<Dynamic>>();
 
     public function new(x:Float = 0, y:Float = 0, char:String = 'bf', isPlayer:Bool = false)
     {
@@ -44,6 +49,28 @@ class Character extends FunkinSprite
         create();
     }
 
+    public var danced:Bool = false;
+
+    public function playAnim(name:String, force:Bool = false)
+    {
+        var daOffset = animOffsets.get(name);
+		offset.set(daOffset[0], daOffset[1]);
+
+        animation.play(name, force);
+
+        if (char.startsWith('gf-') || char == 'gf')
+		{
+			if (name == 'singLEFT')
+				danced = true;
+
+			else if (name == 'singRIGHT')
+				danced = false;
+
+			if (name == 'singUP' || name == 'singDOWN')
+				danced = !danced;
+		}
+    }
+
     public function create()
     {
         //trace(Paths.getImage('characters/${data.image}'));
@@ -51,6 +78,8 @@ class Character extends FunkinSprite
 
         for (anim in data.anims)
         {
+            animOffsets.set(anim.animName, anim.offsets);
+
             animation.addByPrefix(
                 anim.animName, 
                 anim.anim, 
@@ -61,5 +90,10 @@ class Character extends FunkinSprite
         }
 
         if (animation.exists('idle')) animation.play('idle');
+
+        if (data.antialiasing == null)
+            data.antialiasing = true;
+
+        antialiasing = data.antialiasing;
     }
 }

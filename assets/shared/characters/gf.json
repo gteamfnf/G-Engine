@@ -1,0 +1,90 @@
+{
+  "healthbar_colors": [165, 0, 77],
+  "icon": "gf",
+  "anims": [
+    {
+      "offsets": [3, 0],
+      "fps": 24,
+      "anim": "cheer",
+      "loops": false,
+      "animName": "GF Cheer"
+    },
+    {
+      "offsets": [0, -19],
+      "fps": 24,
+      "anim": "singLEFT",
+      "loops": false,
+      "animName": "GF left note"
+    },
+    {
+      "offsets": [0, -20],
+      "fps": 24,
+      "anim": "singDOWN",
+      "loops": false,
+      "animName": "GF Down Note"
+    },
+    {
+      "offsets": [0, 4],
+      "fps": 24,
+      "anim": "singUP",
+      "loops": false,
+      "animName": "GF Up Note"
+    },
+    {
+      "offsets": [0, -20],
+      "fps": 24,
+      "anim": "singRIGHT",
+      "loops": false,
+      "animName": "GF Right Note"
+    },
+    {
+      "offsets": [-2, -21],
+      "fps": 24,
+      "anim": "sad",
+      "loops": false,
+      "animName": "gf sad"
+    },
+    {
+      "offsets": [0, -9],
+      "fps": 24,
+      "anim": "danceLeft",
+      "loops": false,
+      "animName": "GF Dancing Beat"
+    },
+    {
+      "offsets": [0, -9],
+      "fps": 24,
+      "anim": "danceRight",
+      "loops": false,
+      "animName": "GF Dancing Beat"
+    },
+    {
+      "offsets": [45, -8],
+      "fps": 24,
+      "anim": "hairBlow",
+      "loops": true,
+      "animName": "GF Dancing Beat Hair blowing"
+    },
+    {
+      "offsets": [0, -9],
+      "fps": 24,
+      "anim": "hairFall",
+      "loops": false,
+      "animName": "GF Dancing Beat Hair Landing"
+    },
+    {
+      "offsets": [-2, -17],
+      "fps": 24,
+      "anim": "scared",
+      "loops": true,
+      "animName": "GF FEAR"
+    }
+  ],
+  "scale": 1,
+  "singDuration": 4,
+  "flipX": false,
+  "image": "characters/GF_assets",
+  "antialiasing": true,
+  "pos": { "x": 0, "y": 0 },
+  "camPos": { "x": 0, "y": 0 }
+}

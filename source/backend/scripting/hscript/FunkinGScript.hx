@@ -52,8 +52,6 @@ class FunkinGScript extends GScript
 
         var script = 'import flixel.*;\n' + File.getContent(path);
 
-        trace(script);
-
         super(script, config);
 
         set('GEngine', GEngine);
