@@ -69,7 +69,7 @@
   "scale": 1,
   "singDuration": 6.1,
   "flipX": false,
-  "image": "characters/DADDY_DEAREST",
+  "image": "DADDY_DEAREST",
   "antialiasing": true,
   "pos": { "x": 0, "y": 0 },
   "camPos": { "x": 0, "y": 0 }

@@ -109,9 +109,9 @@
   ],
   "scale": 1,
   "singDuration": 4,
-  "flipX": true,
-  "image": "characters/BOYFRIEND",
+  "flipX": false,
+  "image": "BOYFRIEND",
   "antialiasing": true,
-  "pos": { "x": 0, "y": 350 },
+  "pos": { "x": 0, "y": 0 },
   "camPos": { "x": 0, "y": 0 }
 }

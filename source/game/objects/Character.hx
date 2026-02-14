@@ -76,24 +76,30 @@ class Character extends FunkinSprite
         //trace(Paths.getImage('characters/${data.image}'));
         frames = Paths.getFrames('characters/${data.image}');
 
+       //trace(data.anims);
+
         for (anim in data.anims)
         {
-            animOffsets.set(anim.animName, anim.offsets);
+            animOffsets.set(anim.anim, anim.offsets);
 
-            animation.addByPrefix(
-                anim.animName, 
-                anim.anim, 
-                (anim.fps != null) ? anim.fps : 24, 
-                (anim.loops != null) ? anim.loops : false, 
-                (data.flipX != null) ? data.flipX : false
-            );
+            try {
+                animation.addByPrefix(
+                    anim.anim, 
+                    anim.animName, 
+                    (anim.fps != null) ? anim.fps : 24, 
+                    (anim.loops != null) ? anim.loops : false, 
+                    (data.flipX != null) ? data.flipX : false
+                );
+            }
         }
 
-        if (animation.exists('idle')) animation.play('idle');
+        if (animation.exists('idle')) playAnim('idle');
 
         if (data.antialiasing == null)
             data.antialiasing = true;
 
         antialiasing = data.antialiasing;
+
+        //if (isPlayer) flipX = true;
     }
 }

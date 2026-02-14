@@ -27,7 +27,7 @@
   "scale": 1,
   "singDuration": 4,
   "flipX": true,
-  "image": "characters/BOYFRIEND_DEAD",
+  "image": "BOYFRIEND_DEAD",
   "antialiasing": true,
   "pos": { "x": 0, "y": 350 },
   "camPos": { "x": 0, "y": 0 }

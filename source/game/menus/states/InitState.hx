@@ -29,6 +29,10 @@ class InitState extends FlxState
             i++;
         }
         #end
+
+        FlxG.mouse.useSystemCursor = true;
+        FlxG.mouse.visible = false;
+
 	    Preferences.initData();
         FlxG.switchState(new game.menus.states.TitleState());
     }

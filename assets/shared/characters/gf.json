@@ -83,7 +83,7 @@
   "scale": 1,
   "singDuration": 4,
   "flipX": false,
-  "image": "characters/GF_assets",
+  "image": "GF_assets",
   "antialiasing": true,
   "pos": { "x": 0, "y": 0 },
   "camPos": { "x": 0, "y": 0 }

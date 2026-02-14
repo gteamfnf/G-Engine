@@ -22,9 +22,9 @@ class Paths
         return getPath('sounds/${key}.$fileExt');
     }
 
-    inline public static function getMusic(key:String, fileExt = 'ogg')
+    inline public static function getMusic(key:String, fileExt = 'ogg', path = 'music')
     {
-        return getPath('music/${key}.$fileExt');
+        return getPath('$path/${key}.$fileExt');
     }
     
     inline public static function getScript(key:String, fileExt = 'gx')

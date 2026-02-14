@@ -33,8 +33,10 @@ class PlayState extends MusicBeatState
 	
 	override public function create()
 	{
+		FlxG.sound.music.fadeOut(0.05);
 		instance = this;
 		SONG = cast Paths.getJsonData('normal', 'data/test');
+		SONG.bpm;
 
 		super.create();
 
@@ -53,9 +55,46 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 	}
 
+	var didCountdown = false;
+
 	override public function beatHit(curBeat:Int)
 	{
 		for (char in characters)
 			char.animation.play('idle', true);
+
+		if (!didCountdown)
+		{
+			countdown(curBeat % 5);
+		}
+	}
+
+	public function startSong()
+	{
+		MusicHandler.playSong(SONG.name, true);
+	}
+
+	public function countdown(count:Int)
+	{
+		var soundToPlay:String = '';
+		switch (count)
+		{
+			case 0:
+				soundToPlay = 'intro3';
+				
+			case 1:
+				soundToPlay = 'intro2';
+
+			case 2:
+				soundToPlay = 'intro1';
+
+			case 3:
+				soundToPlay = 'introGo';
+
+			case 4:
+				startSong();
+				didCountdown = true;
+		}
+
+		FlxG.sound.play(Paths.getSound('countdown/' + soundToPlay));
 	}
 }
