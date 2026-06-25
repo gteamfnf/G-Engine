@@ -18,7 +18,7 @@ Welcome to the Github repository of G Engine, a [Friday Night Funkin'](https://n
 - Multikey Support!!
 
 ## Credits:
-- [Brainy7890](https://github.com/Brainy0789) - Lead Coder/Owner and stuff
+- [kai](https://github.com/KaiTheHaxeCoder) - Lead Coder/Owner and stuff
 - [ChepsGames](https://github.com/JohnPeakerson) - Owner/Coder/and like something else idk
 - [The Funkin' Crew](https://github.com/FunkinCrew) - they made friday night funkin man they are cool
 - [ALE Psych](https://github.com/ALE-Psych-Crew/ALE-Psych) - Engine inspiration e
